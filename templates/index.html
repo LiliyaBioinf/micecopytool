@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload and Process Data</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="file">Choose Excel file</label>
+            <input type="file" name="file" id="file" required>
+            
+            <label for="mice_per_group">Mice per group</label>
+            <input type="number" name="mice_per_group" id="mice_per_group" required>
+            
+            <label for="output_filename">Output file name</label>
+            <input type="text" name="output_filename" id="output_filename" placeholder="output.xlsx" required>
+
+            <label for="processing_type">Select processing type:</label><br>
+            <input type="radio" id="tumour_volume" name="processing_type" value="tumour_volume" checked>
+            <label for="tumour_volume">Tumour Volume Data</label><br>
+            <input type="radio" id="body_weight" name="processing_type" value="body_weight">
+            <label for="body_weight">Body Weight Data</label><br>
+            
+            <button type="submit">Process</button>
+        </form>
+    </div>
+</body>
+</html>
